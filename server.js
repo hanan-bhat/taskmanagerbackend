@@ -1,5 +1,6 @@
 // server.js
 const express = require('express')
+const serverless = require('serverless-http')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const db = require('./db')
@@ -17,3 +18,6 @@ app.use('/api/tasks', taskRoutes) // Use task routes
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
+
+const handler = serverless(app)
+module.exports = { handler }
