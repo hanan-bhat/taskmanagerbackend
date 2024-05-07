@@ -1,15 +1,3 @@
 [build]
   command = "npm run build"  # Modify build command if needed
   functions = "functions/"   # Directory containing serverless functions
-
-[build.environment]
-  NODE_VERSION = "14"        # Specify Node.js version
-
-[dev]
-  command = "npm run start"  # Development server command
-  port = 3000                # Port for local development
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
