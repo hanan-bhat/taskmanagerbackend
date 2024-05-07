@@ -4,7 +4,7 @@ const serverless = require('serverless-http')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const db = require('./db')
-const taskRoutes = require('./routes/tasks')
+const taskRoutes = require('./functions/routes/tasks')
 
 dotenv.config()
 const app = express()
