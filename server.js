@@ -13,11 +13,10 @@ const PORT = process.env.PORT || 3000
 app.use(express.json())
 app.use(cors())
 
-app.use('/api/tasks', taskRoutes) // Use task routes
+app.use('/.netlify/functions/api/tasks', taskRoutes) // Use task routes
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
 
-const handler = serverless(app)
-module.exports = { handler }
+module.exports.handler = serverless(app)
